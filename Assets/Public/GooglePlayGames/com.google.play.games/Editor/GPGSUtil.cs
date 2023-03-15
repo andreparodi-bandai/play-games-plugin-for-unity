@@ -125,6 +125,17 @@ namespace GooglePlayGames.Editor
                     // Search for root path in plugin locations for both Asset packages and UPM packages
                     string[] dirs = Directory.GetDirectories("Packages", RootFolderName, SearchOption.AllDirectories);
                     string[] dir1 = Directory.GetDirectories("Assets", RootFolderName, SearchOption.AllDirectories);
+                                       
+                    // ap begin fix for upm packages which are not getting resolved by above calls
+                    // see https://github.com/playgameservices/play-games-plugin-for-unity/issues/3163 for more info
+                    string dir2 = Path.GetFullPath("Packages/" + RootFolderName);
+                    if (Directory.Exists(dir2))
+                    {
+                        Array.Resize<string>(ref dirs, dirs.Length + 1);
+                        dirs[^1] = dir2;
+                    }
+                    // ap end fix
+                                       
                     int dirsLength = dirs.Length;
                     Array.Resize<string>(ref dirs, dirsLength + dir1.Length);
                     Array.Copy(dir1, 0, dirs, dirsLength, dir1.Length);
