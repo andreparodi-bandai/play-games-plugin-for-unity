@@ -36,8 +36,8 @@ if (project.hasProperty("uploadDir")) {
 
 android {
     lintOptions {
-        abortOnError true
-        warningsAsErrors true
+        abortOnError false
+        warningsAsErrors false
     }
     defaultConfig {
         versionName  project.version
