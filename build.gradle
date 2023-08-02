@@ -182,9 +182,9 @@ task unity_package(dependsOn:'export_legacy_package') {
     ext.remoteTaskPhase = 'build'
 
     // Depends on packaging all the samples
-    dependsOn {
-        tasks.findAll { task -> task.name.startsWith('PackageSample') }
-    }
+//    dependsOn {
+//        tasks.findAll { task -> task.name.startsWith('PackageSample') }
+//    }
 }
 
 /**

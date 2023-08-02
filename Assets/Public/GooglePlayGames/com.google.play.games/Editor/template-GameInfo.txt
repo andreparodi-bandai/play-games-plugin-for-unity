@@ -38,8 +38,8 @@ namespace GooglePlayGames {
 
         // ap setting these to invalid to disable the way in which these variables get set. 
         // we want to set this at runtime from the outside. 
-        public string ApplicationId = "INVALID"; // Filled in automatically
-        public string WebClientId = "INVALID"; // Filled in automatically
+        public static string ApplicationId = "INVALID"; // Filled in automatically
+        public static string WebClientId = "INVALID"; // Filled in automatically
         public const string IosClientId = "__IOS_CLIENTID__"; // Filled in automatically
         public const string NearbyConnectionServiceId = "__NEARBY_SERVICE_ID__";
 
